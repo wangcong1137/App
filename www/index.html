@@ -50,7 +50,22 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         document.addEventListener('deviceready', this.onDeviceReady,function(){
-            console.log(123);
+            navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError);
+            function geolocationSuccess(){
+                var box = document.getElementById('box')
+                element.innerHTML = 'Latitude1: '   + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + new Date(position.timestamp)          + '<br />';
+            }
+            function geolocationError(){
+                alert('code: '    + error.code    + '\n' +
+			'message: ' + error.message + '\n');
+            }
         }, false);
     </script>
 </body>
