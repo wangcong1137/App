@@ -54,7 +54,7 @@
             navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError);
             function geolocationSuccess(){
                 var box = document.getElementById('box')
-                element.innerHTML = 'Latitude1: '   + position.coords.latitude              + '<br />' +
+                box.innerHTML = 'Latitude1: '   + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
                             'Altitude: '           + position.coords.altitude              + '<br />' +
                             'Accuracy: '           + position.coords.accuracy              + '<br />' +
